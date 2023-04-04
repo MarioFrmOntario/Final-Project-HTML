@@ -1,0 +1,678 @@
+/*------------------Background image, body setup------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background-color: black;
+    background-image:url(/img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------Header-------------------------*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 15px;
+    margin:  auto;
+    background: rgb(12, 12, 12);
+    background-image: linear-gradient(to top, rgb(196, 82, 82) 0%, rgba(255, 255, 255, 0) 100%);
+}
+/*icon*/
+.primary-icon{
+    height: 80px;
+    margin-top: 10px;
+}
+.nav-list{
+    list-style-type: none;
+}
+.nav-list .list-item{
+    display: inline-block;
+    padding: 20px 10px;
+    list-style-type: none;
+}
+/*nav bar text items*/
+.navbar a{
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+}
+/*underline for the nav items without targeting the get started button*/
+.navbar a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /*  height of  underline */
+  bottom: 0;
+  left: 50%;
+  background-color: currentColor; /* Use the text color for the underline */
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+/* part of hover effect*/
+.navbar a:hover::before {
+  width: 100%;
+  left: 0;
+}
+.navbar :hover{
+    color: aliceblue;
+    scale: 20px;
+}
+/*hamburger icon for dropdown*/
+.navbar .toggle-button{
+    color:rgb(2, 2, 2);
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+/*color change on hamburger icon after hover*/
+.navbar .toggle-button:hover{
+  color: aliceblue;
+}
+/*button before the dropdown menu*/
+.action-button{
+    background-color: #e48978;
+    display: inline-block;
+    color:white;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;  
+}
+/*color change on action button after hover*/
+.action-button:hover{
+    transform: scale(1.1); 
+    background-color: #16a085;
+}
+.action-button:active{
+    transform: scale(0.95);
+}
+
+/*--------------Dropdown Menu -------------------------*/
+.dropdown-menu {
+    position: absolute;
+    display:none;
+    right: 32px;
+    top: 60px;
+    height: 0;
+    width: 200px;
+    text-decoration: none;
+    background: rgba(83, 82, 82, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+/*dropdown menu size when opened*/
+.dropdown-menu.open{
+    height: 240px;
+}
+/*options on dropdown*/
+.dropdown-menu .list-item{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*action button on dropdown*/
+.dropdown-menu .action-buttontwo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e48978;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+/*hover and click effect on actionbutton in drop down*/
+.action-buttontwo:hover{
+    transform: scale(1.1); 
+    background-color: #16a085;
+}
+.action-buttontwo:active{
+    transform: scale(0.95);
+}
+
+/*-----------------hero video landing on index page------------------------*/
+/* total container for hero video*/
+.hero-video-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  width: 100%;
+  height: 100vh; /* height of the hero section */
+  overflow:hidden;
+}
+/*color gradiant on video for easier text visibility*/
+.hero-video-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* control the gradient size */
+  background-image: linear-gradient(to top, rgb(17, 17, 17) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+  
+}
+/*video within hero container, runs on loop and doesnt have sound*/
+.hero-video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translateX(-50%) translateY(-50%);
+}
+/*text box within video*/
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #ffffff; 
+  text-align: center;
+  z-index: 2;
+}
+/*text within box on video with call to action button */
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+/*call to action button*/
+.cta-button {
+  display: inline-block;
+  background-color: #e48978; 
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+}
+/*call to action button hover and click effects*/
+.cta-button:hover {
+  background-color: #16a085; 
+  text-decoration: none;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+.cta-button:active{
+  transform: scale(0.95);
+}
+
+/*-------------------------------product details and specifications ----------------------------*/
+.product-details {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -1rem -1rem;
+  
+}
+
+.description-row .product-text h2{
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.specs-pricing-row .product-text  {
+  flex: 1;
+  min-width: calc(50% - 2rem);
+  max-width: calc(50% - 2rem);
+}
+
+.product-text {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/*--------------------product review with pop up window!-------------------*/
+
+/*review section container*/
+.reviews {
+  padding: 2rem 0;
+}
+/*text at top of review section*/
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* div class for photo and text boxes on review items */
+.review-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+/*  */
+.review-item {
+  width: 300px;
+  padding: 1rem;
+}
+/*images for review*/
+.review-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+/*text for reviews below image*/
+.review-text {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/*--------------------- REVIEW IMAGE POPUP -----------------------------*/
+/* actual popup container */
+.review-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+/* content within popup container*/
+
+.review-popup-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 1rem;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.27);
+}
+/*text within popup*/
+.review-popup, popup-text{
+font-weight: bold;
+text-align: center;
+font-size: 25px;
+color: #fcfcfc;
+}
+/*image within popup*/
+.popup-image {
+  width: 100%;
+  height: auto;
+}
+/*x mark for window close*/
+.close {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  font-size: 3rem;
+  color: #fcfcfc;
+  cursor: pointer;
+}
+/*-------------------------------------CONTACT US CSS-----------------------------*/
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.27);
+}
+
+.contact-section {
+  padding: 2rem 0;
+}
+
+.contact-section h1,.contact-section h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-form,.contact-info,.social-media {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],input[type="email"],textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+/*message area text box */
+textarea {
+  height: 300px;
+  resize: none;
+}
+/*submit button */
+button[type="submit"] {
+  display: inline-block;
+  background-color: #e48978;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+/*submit button hover */
+button[type="submit"]:hover {
+  background-color: #16a085;
+}
+
+/* contact info */
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* social media links */
+.social-media a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #16a085;
+}
+
+/*--------------------------PRODUCT PAGE CSS----------------------------- */
+
+.product-details h2, .product-details p {
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  width: 30%;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  color: #000000;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color:rgba(0, 0, 0, 0.3); 
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.add-to-cart {
+  background-color: #e48978;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.add-to-cart:hover {
+  background-color: #16a085;
+}
+
+.customer-reviews {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 70%;
+  
+}
+
+.review {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.review:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color:rgba(0, 0, 0, 0.3); 
+}
+
+.review p {
+  margin-bottom: 0.5rem;
+}
+
+/*-----------------------------ABOUT US CSS------------------------------------*/
+.about-section {
+  width: 100%;
+  padding: 2rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 60%;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color:rgba(0, 0, 0, 0.2); 
+}
+.about-text p{
+  text-align: center;
+}
+.social-media {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social-media i{
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.social-media i:hover {
+    transform: scale(1.1);
+}
+/*----------------------------FOOTER CSS----------------------------------*/
+.footer{ 
+   margin-top: auto;
+   width: 100%;
+  font-family: Arial, sans-serif;
+}
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+  }
+  
+  .footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    
+  }
+  
+  .footer a {
+    color: #000000;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    border-top: 1px solid #444;
+  }
+
+/*----------responsive header and navigation---------------*/
+@media (max-width: 992px) {
+    .navbar .nav-list, 
+    .navbar .action-button{
+        display: none;
+    }
+    .navbar .toggle-button{
+        display: block;
+    }
+    .dropdown-menu{
+        display: block;
+    }
+}
+
+
+ /* ------------------ responsive design for footer--------------------*/
+ @media (max-width: 767px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-column {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  /*---------------Responsive design for product descriptions-------------*/
+
+  @media (max-width: 768px) {
+    .col {
+        min-width: calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .col {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+/*---------------- Responsive design for contact us page --------------------*/
+@media screen and (max-width: 768px) {
+  .contact-info,
+  .social-media {
+      text-align: center;
+  }
+}
+
+/*--------------------Responsive design for product page------------------------*/
+@media screen and (max-width: 1024px) {
+  .product-card {
+      width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-card {
+      width: 80%;
+  }
+}
+
+/*----------------- Responsive Design for About us ------------------------------*/
+@media screen and (max-width: 768px) {
+  .about-content {
+      flex-direction: column;
+  }
+  
+  .about-text {
+      max-width: 100%;
+      text-align: center;
+  }
+}
+
