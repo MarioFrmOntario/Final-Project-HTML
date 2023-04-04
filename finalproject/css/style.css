@@ -225,18 +225,19 @@ body{
   transform: scale(0.95);
 }
 
-/*-------------------------------product details and specifications ----------------------------*/
+/*-------------------------------index product details and specifications ----------------------------*/
+/*breakdown of items available*/
 .product-details {
   padding: 2rem 0;
 }
-
+/*container that holds info below hero video*/
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-
+/*info within container */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -244,30 +245,34 @@ body{
   margin: -1rem -1rem;
   
 }
-
+/*text above popup pictures*/
 .description-row .product-text h2{
   min-width: 100%;
   max-width: 100%;
   text-align: center;
   justify-content: center;
 }
-
-.specs-pricing-row .product-text  {
+/*"what you can expect" text*/
+.specs-info-row .product-text  {
   flex: 1;
   min-width: calc(50% - 2rem);
   max-width: calc(50% - 2rem);
 }
-
+/*class for all text between what the expect and pricing*/
 .product-text {
   padding: 1rem;
   box-sizing: border-box;
 }
-
+/*product price margin mod*/
+.product-price-text {
+  margin-top: 1rem;
+}
+/*what you can expect text only*/
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
+/* what you can expect list*/
 ul {
   list-style: none;
   padding: 0;
@@ -278,7 +283,7 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-/*--------------------product review with pop up window!-------------------*/
+/*--------------------index product review with pop up window!-------------------*/
 
 /*review section container*/
 .reviews {
@@ -297,7 +302,7 @@ ul li {
   text-align: center;
   gap: 1rem;
 }
-/*  */
+/* individual review items with image */
 .review-item {
   width: 300px;
   padding: 1rem;
@@ -359,31 +364,31 @@ color: #fcfcfc;
   cursor: pointer;
 }
 /*-------------------------------------CONTACT US CSS-----------------------------*/
-
+/*container that holds all contact info bodies*/
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.27);
 }
-
+/*section class */
 .contact-section {
   padding: 2rem 0;
 }
-
+/* contact info text outside boxes */
 .contact-section h1,.contact-section h2 {
   margin-bottom: 1rem;
 }
-
+/* div classes for all text */
 .contact-form,.contact-info,.social-media {
   margin-bottom: 2rem;
 }
-
+/* naming scheme for contact boxes */
 label {
   display: block;
   margin-bottom: 0.5rem;
 }
-
+/* inputs for the contact boxes greyed textarea */
 input[type="text"],input[type="email"],textarea {
   width: 100%;
   padding: 0.5rem;
@@ -422,26 +427,26 @@ button[type="submit"]:hover {
   color: #333;
   text-decoration: none;
 }
-
+/*hover effect for social media links */
 .social-media a:hover {
   color: #16a085;
 }
 
 /*--------------------------PRODUCT PAGE CSS----------------------------- */
-
+/*product text*/
 .product-details h2, .product-details p {
   text-align: center;
   justify-content: center;
   font-weight: bold;
 }
-
+/*grid that holds all the cards*/
 .product-grid {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-
+/* cards that show items with photo and information */
 .product-card {
   width: 30%;
   border-radius: 4px;
@@ -453,18 +458,18 @@ button[type="submit"]:hover {
   transition: 0.3s;
   color: #000000;
 }
-
+/*card hover effect*/
 .product-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color:rgba(0, 0, 0, 0.3); 
 }
-
+/*card images*/
 .product-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-
+/*add to card buttons*/
 .add-to-cart {
   background-color: #e48978;
   color: #000000;
@@ -476,11 +481,11 @@ button[type="submit"]:hover {
   cursor: pointer;
   margin-top: 1rem;
 }
-
+/*add to card button hover effect*/
 .add-to-cart:hover {
   background-color: #16a085;
 }
-
+/*reviews below cards*/
 .customer-reviews {
   margin-bottom: 2rem;
   margin-left: 1rem;
@@ -488,12 +493,13 @@ button[type="submit"]:hover {
   max-width: 70%;
   
 }
-
+/*text within review*/
 .review {
   margin-bottom: 1rem;
   padding-left: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+/*hover effect on reviews*/
 .review:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color:rgba(0, 0, 0, 0.3); 
@@ -504,17 +510,18 @@ button[type="submit"]:hover {
 }
 
 /*-----------------------------ABOUT US CSS------------------------------------*/
+/*div class for total about section*/
 .about-section {
   width: 100%;
   padding: 2rem;
 }
-
+/*content within section*/
 .about-content {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
-
+/*text within section*/
 .about-text {
   max-width: 60%;
   padding: 1rem;
@@ -524,40 +531,45 @@ button[type="submit"]:hover {
 .about-text p{
   text-align: center;
 }
+/*socials icons and link*/
 .social-media {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+/*icons for socials*/
 .social-media i{
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #4c42a8;
   padding: 1rem;
 }
-
+/*links*/
 .social-media a {
     display: inline-block;
     margin: 0.5rem;
+    font-size: 0.7rem;
 }
-
+/*hover effect on socials*/
 .social-media i:hover {
     transform: scale(1.1);
 }
 /*----------------------------FOOTER CSS----------------------------------*/
+/* total footer body*/
 .footer{ 
    margin-top: auto;
    width: 100%;
   font-family: Arial, sans-serif;
 }
+/*container within footer that holds everything*/
   .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
   }
-  
+  /*columns with listed items and info*/
   .footer-column {
     flex: 1;
     min-width: 200px;
@@ -566,12 +578,12 @@ button[type="submit"]:hover {
     margin-right: 16px;
     text-align: center;
   }
-  
+  /* top text above footer information*/
   .footer h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
-  
+  /*lower text on info*/
   .footer p {
     font-size: 0.9rem;
     line-height: 1.5;
@@ -581,7 +593,7 @@ button[type="submit"]:hover {
     list-style-type: none;
     
   }
-  
+  /* mods on text links*/
   .footer a {
     color: #000000;
     font-size: 0.9rem;
@@ -589,11 +601,11 @@ button[type="submit"]:hover {
     display: block;
     margin-bottom: 0.5rem;
   }
-  
+  /*hover effect on footer links*/
   .footer a:hover {
     text-decoration: underline;
   }
-  
+  /* all rights reserved etc*/
   .footer-bottom {
     text-align: center;
     padding: 1rem;
